@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Doctorly.Persistence
+namespace Doctorly.Services.Events.EventCommands
 {
-    public class Class1
+    public class PutEventDetailsCommand
     {
     }
 }

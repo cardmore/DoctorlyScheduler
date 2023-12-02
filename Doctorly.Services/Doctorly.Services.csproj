@@ -42,15 +42,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Common\Interfaces\IMainDbContext.cs" />
+    <Compile Include="Events\Dtos\RequestDtp\EventsRequestDto.cs" />
+    <Compile Include="Events\Dtos\ResponseDto\EventsResponseDto.cs" />
+    <Compile Include="Events\EventCommands\DeleteEventDetailsCommand.cs" />
+    <Compile Include="Events\EventCommands\PutEventDetailsCommand.cs" />
+    <Compile Include="Events\EventCommands\PostEventDetailsCommand.cs" />
+    <Compile Include="Events\EventQueries\GetEventsDetailsQuery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Bookings\BookingCommands\" />
     <Folder Include="Bookings\BookingQueries\" />
+    <Folder Include="Bookings\Dtos\BookingRequestDto\" />
+    <Folder Include="Bookings\Dtos\BookingsResponseDto\" />
     <Folder Include="Doctors\DoctorCommands\" />
     <Folder Include="Doctors\DoctorQueries\" />
-    <Folder Include="Events\EventCommands\" />
-    <Folder Include="Events\EventQueries\" />
     <Folder Include="Users\UserCommands\" />
     <Folder Include="Users\UserQueries\" />
   </ItemGroup>
