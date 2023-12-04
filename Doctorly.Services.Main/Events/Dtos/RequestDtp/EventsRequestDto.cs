@@ -1,4 +1,4 @@
-﻿using Doctorly.Domain.Main.Entities;
+﻿using Doctorly.Domain.Entities;
 
 namespace Doctorly.Services.Events.Dtos.RequestDtp
 {

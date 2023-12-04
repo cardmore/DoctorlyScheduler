@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Doctorly.Domain.Main.Entities
+namespace Doctorly.Domain.Entities
 {
     public class Event
     {
@@ -11,6 +11,7 @@ namespace Doctorly.Domain.Main.Entities
         public DateTime EndDateTime { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime LastUpdatedDate { get; set; }
-        public User.ID User { get; set; }
+        public int CreatedBy { get; set;}
+        public int LastUpdatedBy { get; set; }
     }
 }

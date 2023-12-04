@@ -1,4 +1,4 @@
-﻿namespace Doctorly.Domain
+﻿namespace Doctorly.Domain.Entities
 {
     public class User
     {

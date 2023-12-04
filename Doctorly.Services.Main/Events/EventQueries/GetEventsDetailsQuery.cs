@@ -1,35 +1,31 @@
-﻿using Doctorly.Domain.Main.Entities;
-using Doctorly.Services.Common;
-using Doctorly.Services.Common.Interfaces;
-using Doctorly.Services.Events.Dtos.RequestDtp;
+﻿using Doctorly.Repository.Interfaces;
 using Doctorly.Services.Events.Dtos.ResponseDto;
 using MapsterMapper;
 using MediatR;
 
 namespace Doctorly.Services.Events.EventQueries
 {
-    public class GetEventsDetailsQuery : RequestWrapper<GetEventRequestDto, EventsResponseDto>
+    public class GetEventsDetailsQuery : IRequest<List<EventsResponseDto>>
     {
     }
 
-    public class GetEventsDetailsQueryHandler : IRequestHandlerWrapper<GetEventsDetailsQuery, EventsResponseDto>
+    public class GetEventsDetailsQueryHandler : IRequestHandler<GetEventsDetailsQuery, List<EventsResponseDto>>
     {
-        private readonly IDoctorlyDbContext _db;
+        private readonly IEventsRepository _eventsRepository;
         private readonly IMapper _mapper;
 
-        public GetEventsDetailsQueryHandler(IDoctorlyDbContext db, IMapper mapper)
+        public GetEventsDetailsQueryHandler(IEventsRepository eventsRepository, IMapper mapper)
         {
-            _db = db;
+            _eventsRepository = eventsRepository;
             _mapper = mapper;
         }
-
-        public async Task<EventsResponseDto> Handle(GetEventsDetailsQuery request, CancellationToken cancellationToken)
+        public async Task<List<EventsResponseDto>> Handle(GetEventsDetailsQuery request, CancellationToken cancellationToken)
         {
-            var getEntities = _db.GetList<Event>("@ID=@p0", request.ClientId);
+            var events = _eventsRepository.GetAllEvents();
 
-            var response = new EventsResponseDto();
+           var eventsResponse =  _mapper.Map(events, new List<EventsResponseDto>());
 
-            return response;
+            return eventsResponse;
         }
     }
 }

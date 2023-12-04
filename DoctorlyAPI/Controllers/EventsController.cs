@@ -8,21 +8,17 @@ namespace DoctorlyAPI.Controllers
 {
     public class EventsController : BaseApiController
     {
-        public EventsController()
-        {
-      
-        }
-
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<EventsResponseDto>>> GetAllEvents(CancellationToken cancellationToken)
+        public async Task<ActionResult<IEnumerable<EventsResponseDto>>> GetEvents(CancellationToken cancellationToken)
         {
             var query = new GetEventsDetailsQuery
             {
 
             };
-                 
-            return Ok(await Mediator.Send(query, cancellationToken));
+
+           return Ok(await Mediator.Send(query, cancellationToken));
         }
+
 
         [HttpPost]
         public async Task<ActionResult<IEnumerable<EventsResponseDto>>> AddEvent([FromBody] GetEventRequestDto request, CancellationToken cancellationToken)

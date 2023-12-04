@@ -11,6 +11,7 @@
     <Folder Include="Bookings\BookingQueries\" />
     <Folder Include="Bookings\Dtos\BookingRequestDto\" />
     <Folder Include="Bookings\Dtos\BookingsResponseDto\" />
+    <Folder Include="Common\Interfaces\" />
     <Folder Include="Doctors\DoctorCommands\" />
     <Folder Include="Doctors\DoctorQueries\" />
     <Folder Include="Users\UserCommands\" />
@@ -21,11 +22,11 @@
     <PackageReference Include="Mapster" Version="7.4.0" />
     <PackageReference Include="Mapster.DependencyInjection" Version="1.0.1" />
     <PackageReference Include="MediatR" Version="12.2.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Doctorly.Domain.Main\Doctorly.Domain.csproj" />
+    <ProjectReference Include="..\Doctorly.Domainn\Doctorly.Domain.csproj" />
+    <ProjectReference Include="..\Doctorly.Repository\Doctorly.Repository.csproj" />
   </ItemGroup>
 
 </Project>

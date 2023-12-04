@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Doctorly.Domain
+﻿namespace Doctorly.Domain.Entities
 {
     public class Booking
     {
@@ -13,7 +7,7 @@ namespace Doctorly.Domain
         public int DoctorID { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public TimeSpan Duration  { get; set; }   
+        public TimeSpan Duration { get; set; }
         public string Comments { get; set; }
     }
 }

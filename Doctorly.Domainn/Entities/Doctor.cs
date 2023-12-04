@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Doctorly.Domain.Main.Entities
+namespace Doctorly.Domain.Entities
 {
     public class Doctor
     {
